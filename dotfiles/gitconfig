@@ -1,0 +1,23 @@
+# EDIT
+# ~/.gitconfig on MacOSX 10.6.x
+[user]
+  name = Your Name Here
+  email = Your Email Addy
+[color]
+  ui = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[alias]
+  st = status
+  ci = commit
+  co = checkout
+  br = branch
+  tip = log -1
+[apply]
+  whitespace = nowarn
+  whitespace = strip
+[push]
+  default = nothing
+[core]
+  editor = mate -w
