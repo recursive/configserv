@@ -1,0 +1,2 @@
+# ~/.rvmrc
+rvm_archflags="-arch x86_64"
