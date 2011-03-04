@@ -1,0 +1,5 @@
+# EDIT
+
+#!/bin/sh
+echo 'starting unicorn for app_name'
+exec /usr/local/bin/global_unicorn -c /path/to/app/config/unicorn.rb

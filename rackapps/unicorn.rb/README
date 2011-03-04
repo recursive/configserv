@@ -1,0 +1,3 @@
+These files play well with RVM.
+
+All unicorn scripts verify directory structure so as not to fail on init.

@@ -1,0 +1,34 @@
+Assumed setup (I'm using ArchLinux):
+
+  rvm installed in server mode
+    bash < <( curl -L http://bit.ly/rvm-install-system-wide )
+
+  nginx installed
+    pacman -S nginx
+
+  unicorn installed in global gemset
+    rvm use 1.9.2-p180@global --default
+    gem install bundler unicorn
+    rvm wrapper ruby-1.9.2-p180 global unicorn
+
+  daemontools 0.76 installed
+    mkdir ~/build; cd ~/build
+    curl -O http://aur.archlinux.org/packages/daemontools/daemontools.tar.gz
+    tar xzf daemontools.tar.gz; cd daemontools; makepkg
+    pacman -U daemontools-0.76-3-x86_64.pkg.tar.xz
+
+  unicorn user exists (to run both nginx and unicorn) with rvm setup
+    useradd --home /path/to/example --create-home --groups rvm unicorn
+    chmod g+w /path/to/example
+    echo 'source /usr/local/lib/rvm' >> /path/to/example/.bashrc
+
+Conventions:
+
+  nginx files are stored in /etc/nginx
+  unicorn files are located in app_root/config/unicorn.rb
+  rackup files are located in app_root/config.ru
+  application specific service file is located in app_root/config/service/run
+  application specific service directory and contents is 755 (chmod -R 755 dir)
+  server services directory is located at /services/
+  each application has a .rvmrc that states the ruby version and the gemset
+  each application uses 'bundle install --deployment' when possible
