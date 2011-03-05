@@ -1,3 +1,7 @@
 Installation:
   rvm gemset use global
   gem install god
+
+Using god as root
+  watch: god -c /path/to/the/god/file.god -D
+  stop: god stop god-watch-name
