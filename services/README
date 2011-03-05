@@ -1,15 +1,4 @@
-Requires daemontools
+Everything listed in here is for service management.
 
-I suggest these be located in the directory app_root/config/service if a webapp
-
-The service directory should be 755 (chmod -R 755 app_root/config/service)
-
-They should be symlinked OR copied into /service (by default you must be root):
-  ln -s /path/to/app/conf/service /service/app_name
-  cp -r /path/to/app/conf/service /service/app_name
-
-Usage notes:
-  after symlink, service starts within 5 seconds
-  take service down: svc -d /services/app_name
-  bring service up: svc -u /services/app_name
-  list status of all services: svstat /services/*
+daemontools is in AUR on ArchLinux
+god is a ruby gem

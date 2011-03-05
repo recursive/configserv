@@ -1,0 +1,3 @@
+Installation:
+  rvm gemset use global
+  gem install god
