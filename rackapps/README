@@ -11,12 +11,6 @@ Assumed setup (I'm using ArchLinux):
     gem install bundler unicorn
     rvm wrapper ruby-1.9.2-p180 global unicorn
 
-  daemontools 0.76 installed
-    mkdir ~/build; cd ~/build
-    curl -O http://aur.archlinux.org/packages/daemontools/daemontools.tar.gz
-    tar xzf daemontools.tar.gz; cd daemontools; makepkg
-    pacman -U daemontools-0.76-3-x86_64.pkg.tar.xz
-
   unicorn user exists (to run both nginx and unicorn) with rvm setup
     useradd --home /path/to/example --create-home --groups rvm unicorn
     chmod g+w /path/to/example
@@ -32,3 +26,5 @@ Conventions:
   server services directory is located at /services/
   each application has a .rvmrc that states the ruby version and the gemset
   each application uses 'bundle install --deployment' when possible
+  start applications by using:
+    /usr/local/bin/global_unicorn -c /path/to/app/config/unicorn.rb -D

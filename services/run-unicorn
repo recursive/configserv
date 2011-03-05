@@ -1,4 +1,5 @@
 # EDIT
+# make sure 'rvm wrapper ruby-1.9.2-p180@global global unicorn' has been run
 
 #!/bin/sh
 echo 'starting unicorn for app_name'

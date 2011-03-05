@@ -1,4 +1,6 @@
-These run files should be located in the directory app_root/config/service
+Requires daemontools
+
+I suggest these be located in the directory app_root/config/service if a webapp
 
 The service directory should be 755 (chmod -R 755 app_root/config/service)
 
